@@ -1,1 +1,1 @@
-# clib
+# clib this is c/C++ common function
