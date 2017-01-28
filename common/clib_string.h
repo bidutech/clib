@@ -6,10 +6,7 @@
 #define CLIB_CLIBSTRING_H
 
 #include <stdio.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
+
 
 /**
  * the function strsplit comefrom internet the  author can email me

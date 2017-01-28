@@ -1,10 +1,15 @@
 //
 // Created by root on 17-1-13.
 //
+#include <unistd.h>
+#include <time.h>
+#include <sys/time.h>
+#include <stdlib.h>
+#include <string.h>
 #include "clib_string.h"
 #include "stringtest.h"
 #include "clib_time.h"
-#include <unistd.h>
+
 
 void timenow(){
 

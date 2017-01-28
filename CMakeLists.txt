@@ -9,11 +9,11 @@ test
 )
 
 set(SOURCE_FILES
-        main.cpp
+        main.c
         common/clib_string.h
-        common/clib_string.cpp
+        common/clib_string.c
         common/clib_time.h
-        common/clib_time.cpp
+        common/clib_time.c
         test/stringtest.h
-        test/stringtest.cpp)
+        test/stringtest.c)
 add_executable(clib ${SOURCE_FILES})

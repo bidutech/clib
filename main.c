@@ -1,12 +1,13 @@
-#include <iostream>
+#include <stdio.h>
 
 #include "stringtest.h"
 
 
-using namespace std;
+//using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
+    //cout << "Hello, World!" << endl;
+    printf("Hello, World!\n");
     //teststrsplit();
     //teststrprinthx();
     //printhextest();
