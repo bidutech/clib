@@ -11,6 +11,11 @@ __time_t tv_sec;        //Seconds.
 __suseconds_t tv_usec;  //Microseconds.
 };
 其中，tv_sec为Epoch到创建struct timeval时的秒数，tv_usec为微秒数
+ 1秒＝1000毫秒，
+1毫秒＝1000微秒，
+1微妙＝1000纳秒，
+1纳秒＝1000皮秒。
+秒用s表现,毫秒用ms,微秒用μs表示，纳秒用ns表示，皮秒用ps表示
 *************************************************************/
 
 long time_now_s(void);
