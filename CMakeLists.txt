@@ -8,5 +8,12 @@ common
 test
 )
 
-set(SOURCE_FILES main.cpp common/clibstring.h common/clibstring.cpp test/stringtest.h test/stringtest.cpp)
+set(SOURCE_FILES
+        main.cpp
+        common/clib_string.h
+        common/clib_string.cpp
+        common/clib_time.h
+        common/clib_time.cpp
+        test/stringtest.h
+        test/stringtest.cpp)
 add_executable(clib ${SOURCE_FILES})

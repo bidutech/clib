@@ -1,8 +1,22 @@
 //
 // Created by root on 17-1-13.
 //
-#include "clibstring.h"
+#include "clib_string.h"
 #include "stringtest.h"
+#include "clib_time.h"
+#include <unistd.h>
+
+void timenow(){
+
+
+    struct timeval now,future;
+    now =time_now_tv();
+    sleep(1);
+    future=time_now_tv();
+    printf("time run :%lld\n",time_diff_ms(future,now));
+    printf("now:%ld\n",time_now_s());
+
+}
 int teststrsplit(){
 
     if(1){
@@ -60,3 +74,4 @@ int printhextest(){
     printf("src string is:%s\n",p);
     printf("des string is:%s\n",des);
 }
+

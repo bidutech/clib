@@ -2,7 +2,7 @@
 // Created by root on 17-1-13.
 //
 
-#include "clibstring.h"
+#include "clib_string.h"
 
 /**
  * Split a string into some strings according to a list of separators.

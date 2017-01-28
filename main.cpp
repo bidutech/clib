@@ -9,6 +9,7 @@ int main() {
     cout << "Hello, World!" << endl;
     //teststrsplit();
     //teststrprinthx();
-    printhextest();
+    //printhextest();
+    timenow();
     return 0;
 }

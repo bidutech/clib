@@ -9,5 +9,6 @@
 int teststrsplit();
 int teststrprinthx();
 int printhextest();
+void timenow();
 
 #endif //CLIB_STRINGTEST_H
