@@ -42,16 +42,13 @@ long long  time_now_ms(void);/*long long 防止在32位设备溢出 gettimeofday
 
 struct timeval time_now_tv(void);
 
-//返回时间间隔单位毫秒
-long long  time_diff_ms(struct timeval newer, struct timeval older);
+
+long long  time_diff_ms(struct timeval newer, struct timeval older);//返回时间间隔单位毫秒
 
 
-/*
- * 返回进程运行时间
- */
-long time_elapsed_time();
+long time_elapsed_time();//返回进程运行时间
 
-char * time_today_full_string();
+char * time_today_full_string();//Today is Sunday, day 29 of January in the year 2017
 
 
 
