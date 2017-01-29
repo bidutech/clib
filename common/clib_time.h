@@ -1,22 +1,40 @@
 #ifndef CLIB_TIMER_H
 #define CLIB_TIMER_H
 #include <stdio.h>
+#include <stdbool.h>
 
-/**********************************************************
- 1s=1000ms=1000*1000微秒=1000*1000*1000纳秒=1000000000000皮秒
 
- struct timeval
+#define  MAX_CH_DATE_LEN  26
+
+typedef struct time_lunar_date  lunardate;
+typedef struct time_lunar_date  solardate;
+
+
+struct time_lunar_date
 {
-__time_t tv_sec;        //Seconds.
-__suseconds_t tv_usec;  //Microseconds.
+    //保存一个农历日期
+    //年
+    int year;
+    //月
+    int month;
+    //日
+    int day;
+    //是否闰月
+    bool leap;
 };
-其中，tv_sec为Epoch到创建struct timeval时的秒数，tv_usec为微秒数
- 1秒＝1000毫秒，
-1毫秒＝1000微秒，
-1微妙＝1000纳秒，
-1纳秒＝1000皮秒。
-秒用s表现,毫秒用ms,微秒用μs表示，纳秒用ns表示，皮秒用ps表示
-*************************************************************/
+
+solardate time_now_solardate();//年 月 日
+
+lunardate time_now_lunardate();//当前农历年月日
+
+char * time_lunardate_to_callocstr(lunardate lunar_date);//获取农历字符串 “二零一七年二月初二”
+
+
+lunardate time_lunardate(int solar_year,int solar_month,int solar_day);//公历年月日转农历
+
+//计算这个公历日期是一年中的第几天
+int time_day_of_solaryear(int year, int month, int day );
+
 
 long time_now_s(void);
 
@@ -26,5 +44,15 @@ struct timeval time_now_tv(void);
 
 //返回时间间隔单位毫秒
 long long  time_diff_ms(struct timeval newer, struct timeval older);
+
+
+/*
+ * 返回进程运行时间
+ */
+long time_elapsed_time();
+
+char * time_today_full_string();
+
+
 
 #endif

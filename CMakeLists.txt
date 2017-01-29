@@ -16,4 +16,5 @@ set(SOURCE_FILES
         common/clib_time.c
         test/stringtest.h
         test/stringtest.c)
+
 add_executable(clib ${SOURCE_FILES})
