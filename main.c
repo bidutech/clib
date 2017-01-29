@@ -8,9 +8,9 @@
 int main() {
     //cout << "Hello, World!" << endl;
     printf("Hello, World!\n");
-    //teststrsplit();
-    //teststrprinthx();
-    //printhextest();
+    teststrsplit();
+    teststrprinthx();
+    printhextest();
     timenow();
     return 0;
 }
