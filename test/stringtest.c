@@ -21,7 +21,7 @@ void timenow(){
     printf("time run :%lld\n",time_diff_ms(future,now));
     printf("now:%ld\n",time_now_s());
     printf("****************\n");
-    char *today =time_today_full_string();
+    char *today =time_today_callocstring();
     if(today){
         printf("today:%s\n",today);
     }

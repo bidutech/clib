@@ -100,6 +100,9 @@ long int tm_gmtoff;  //指定了日期变更线东面时区中UTC东部时区正
 const char *tm_zone; //当前时区的名字(与环境变量TZ有关)　
 };
 */
+/*
+ 本文农历算法来自互联网
+ */
 /***************************************************************************************************
 C++代码实现的农历算法（1901 - 2099）
 历法基本知识总结，不废话。
@@ -397,7 +400,7 @@ time_elapsed_time()
  即2017年1月29日30日15点18分30秒
  * */
 char *
-time_today_full_string()
+time_today_callocstring()
 {
     struct tm *newtime;
     char *todaystr=calloc(1,128);
@@ -407,6 +410,7 @@ time_today_full_string()
     time_t lt1;
     time( &lt1 );
     newtime=localtime(&lt1);
-    strftime(todaystr, 128,"Today is %A, day %d of %B in the year %Y", newtime);
+    //strftime(todaystr, 128,"Today is %A, day %d of %B in the year %Y", newtime);
+    sprintf(todaystr, "%02d-%02d-%02d %02d:%02d:%02d", newtime->tm_year + 1900, newtime->tm_mon + 1, newtime->tm_mday, newtime->tm_hour, newtime->tm_min, newtime->tm_sec);
     return todaystr;
 }

@@ -48,7 +48,7 @@ long long  time_diff_ms(struct timeval newer, struct timeval older);//返回时�
 
 long time_elapsed_time();//返回进程运行时间
 
-char * time_today_full_string();//Today is Sunday, day 29 of January in the year 2017
+char * time_today_callocstring();//Today is Sunday, day 29 of January in the year 2017
 
 
 
