@@ -12,5 +12,6 @@ int main() {
     teststrprinthx();
     printhextest();
     timenow();
+
     return 0;
 }
