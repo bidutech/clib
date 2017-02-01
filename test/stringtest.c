@@ -34,6 +34,13 @@ void timenow(){
 
 }
 int teststrsplit(){
+    char *str=NULL;
+    char *str1=NULL;
+    str1=string_malloc(&str,100);
+
+    strcpy(str1,"hello---------------- word!\n");
+    printf(str1);
+    return 0;
 
     if(1){
         char *separator[] = {"\n","-"};

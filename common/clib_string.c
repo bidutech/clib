@@ -313,6 +313,42 @@ void string_print_hex(unsigned char *src, int srclen, char *des, int deslen)
     return;
 }
 
-/*
- 16 进制打印end
- * */
+//找出子串第一次出现的位置
+char *string_strstr(char * str, char *substr) {
+    char *p0;
+    char *p1;
+    char *p2;
+    p1 = p0 = str;
+    p2 = substr;
+    int i = 0;
+    int j = 0;
+    int lensubstr = strlen(substr);
+    int lensrc = strlen(str);
+    while (1) {
+        if (*p0 == *p2) {
+            j++;
+            p0++;
+            p2++;
+            if (j == lensubstr) {
+                p0 = p1 + i;
+                break;
+            }
+        } else {
+            j = 0;
+            i++;
+            p0 = p1 + i;
+            p2 = substr;
+        }
+        if (i == lensrc) {
+            p0 = (char *) NULL;
+            break;
+        }
+    }
+    return p0;
+}
+
+char *string_malloc(char ** str,int n)//这只是一个函数内部修改指针本身的一个例子
+{
+    *str=(char*)malloc(n);
+    return  *str;
+}
