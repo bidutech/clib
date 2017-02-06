@@ -33,7 +33,7 @@ void test_conf(){
 
 
 
-    
+
     char *p1 = clib_conf_parse_ini_param(path, "updateurl");
 
     if (!p1) return ;
