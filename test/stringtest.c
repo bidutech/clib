@@ -31,6 +31,9 @@ void test_conf(){
     clib_conf_ini_writeconf(path,"intertime","3000",0);
     clib_conf_ini_writeconf(path,"httpport","8080",0);
 
+
+
+    
     char *p1 = clib_conf_parse_ini_param(path, "updateurl");
 
     if (!p1) return ;
