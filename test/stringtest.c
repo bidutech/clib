@@ -9,8 +9,53 @@
 #include "clib_string.h"
 #include "stringtest.h"
 #include "clib_time.h"
+#include "clib_conf.h"
+#include "clib_file.h"
 
+void test_conf(){
+ char  *path="test.ini";
+  char *p = clib_conf_parse_ini_param(path, "processname");
 
+  if (!p) return ;
+  char *proname = calloc(1,strlen(p) + 1);
+  strncpy(proname, p, strlen(p));
+
+  int port = 0;
+  CLIB_INI_ParseParamInt(path, "httpport", port);
+  if (port <= 0) {
+      port = 3300;
+  }
+    printf("processname:%s,httpport:%d\n",proname,port);
+
+    clib_conf_ini_writeconf(path,"updateurl","www.baidu.com",1);
+    clib_conf_ini_writeconf(path,"intertime","3000",0);
+    clib_conf_ini_writeconf(path,"httpport","8080",0);
+
+    char *p1 = clib_conf_parse_ini_param(path, "updateurl");
+
+    if (!p1) return ;
+    char *updateurl = calloc(1,strlen(p1) + 1);
+    strncpy(updateurl, p1, strlen(p1));
+
+    int intertime = 0;
+    CLIB_INI_ParseParamInt(path, "intertime", intertime);
+    if (intertime <= 0) {
+        intertime = 3300;
+    }
+    printf("updateurl:%s,intertime:%d\n",updateurl,intertime);
+    free(updateurl);
+    free(proname);
+
+}
+void test_file(){
+  char *path=NULL;
+  int pathlen=0;
+  pathlen=clib_file_current_mallocfullpath(&path);
+  printf("pathlen:%d,path:%s\n",pathlen,path);
+  free(path);
+  path =NULL;
+
+}
 void timenow(){
 
 

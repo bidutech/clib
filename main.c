@@ -12,6 +12,8 @@ int main() {
     teststrprinthx();
     printhextest();
     timenow();
+    test_file();
+    test_conf();
 
     return 0;
 }

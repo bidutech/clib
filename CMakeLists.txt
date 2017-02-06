@@ -14,6 +14,11 @@ set(SOURCE_FILES
         common/clib_string.c
         common/clib_time.h
         common/clib_time.c
+        common/clib_file.h
+        common/clib_file.c
+        common/clib_conf.h
+        common/clib_conf.c
+
         test/stringtest.h
         test/stringtest.c
 

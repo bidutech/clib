@@ -1,5 +1,9 @@
 #ifndef CLIB_TIMER_H
 #define CLIB_TIMER_H
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -51,5 +55,8 @@ long time_elapsed_time();//返回进程运行时间
 char * time_today_callocstring();//Today is Sunday, day 29 of January in the year 2017
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif

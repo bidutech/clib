@@ -4,6 +4,9 @@
 
 #ifndef CLIB_CLIBSTRING_H
 #define CLIB_CLIBSTRING_H
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <stdio.h>
 
@@ -47,5 +50,9 @@ char *string_strstr(char * str, char *substr);//找出子串第一次出现的�
 
 char * string_malloc(char ** str,int n);//这只是一个函数内部修改指针本身的一个例子
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //CLIB_CLIBSTRING_H
