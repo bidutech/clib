@@ -5,7 +5,8 @@ extern "C" {
 #endif
 
 
-int clib_file_current_mallocfullpath(char ** ppath);
+int clib_file_current_path(char ** ppath);
+int clib_file_can_wr(char *path);//test rigfht
 
 #ifdef __cplusplus
 }
