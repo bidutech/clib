@@ -53,7 +53,7 @@ void test_conf(){
 void test_file(){
   char *path=NULL;
   int pathlen=0;
-  pathlen=clib_file_current_mallocfullpath(&path);
+  pathlen=clib_file_current_path(&path);
   printf("pathlen:%d,path:%s\n",pathlen,path);
   free(path);
   path =NULL;

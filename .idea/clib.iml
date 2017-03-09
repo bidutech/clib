@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_http_url.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_btype.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_time.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_conf.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_http_url.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_time.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_file.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_http.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_string.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_conf.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_file.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_http.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/clib_string.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test/stringtest.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test/stringtest.h" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.8.5/include" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+          <root url="file://$USER_HOME$/桌面" />
+          <root url="file://$MODULE_DIR$/common" />
+          <root url="file://$MODULE_DIR$/test" />
+          <root url="file://$MODULE_DIR$/../../../soft/mysql-5.7.11/include" />
+          <root url="file://$MODULE_DIR$/../../../soft/libevent/include" />
+          <root url="file://$MODULE_DIR$/../../../soft/drizzle7-2011.07.21/libdrizzle-1.0" />
+          <root url="file://$MODULE_DIR$/../../../soft/openssl-1.0.1t/include/openssl" />
+          <root url="file://$MODULE_DIR$/../../../soft/boost_1_60_0" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/lib/gcc/x86_64-redhat-linux/4.8.5/include" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+          <root url="file://$USER_HOME$/桌面" />
+          <root url="file://$MODULE_DIR$/common" />
+          <root url="file://$MODULE_DIR$/test" />
+          <root url="file://$MODULE_DIR$/../../../soft/mysql-5.7.11/include" />
+          <root url="file://$MODULE_DIR$/../../../soft/libevent/include" />
+          <root url="file://$MODULE_DIR$/../../../soft/drizzle7-2011.07.21/libdrizzle-1.0" />
+          <root url="file://$MODULE_DIR$/../../../soft/openssl-1.0.1t/include/openssl" />
+          <root url="file://$MODULE_DIR$/../../../soft/boost_1_60_0" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/common/clib_http_url.h" />
+          <root url="file://$MODULE_DIR$/common/clib_btype.h" />
+          <root url="file://$MODULE_DIR$/common/clib_time.c" />
+          <root url="file://$MODULE_DIR$/common/clib_conf.h" />
+          <root url="file://$MODULE_DIR$/common/clib_http_url.c" />
+          <root url="file://$MODULE_DIR$/common/clib_time.h" />
+          <root url="file://$MODULE_DIR$/common/clib_file.c" />
+          <root url="file://$MODULE_DIR$/common/clib_http.c" />
+          <root url="file://$MODULE_DIR$/common/clib_string.h" />
+          <root url="file://$MODULE_DIR$/common/clib_conf.c" />
+          <root url="file://$MODULE_DIR$/common/clib_file.h" />
+          <root url="file://$MODULE_DIR$/common/clib_http.h" />
+          <root url="file://$MODULE_DIR$/common/clib_string.c" />
+          <root url="file://$MODULE_DIR$/test/stringtest.c" />
+          <root url="file://$MODULE_DIR$/test/stringtest.h" />
+        </excluded>
+      </library>
+    </orderEntry>
+  </component>
+</module>

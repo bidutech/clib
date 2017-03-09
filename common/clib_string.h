@@ -9,7 +9,7 @@ extern "C" {
 #endif
 
 #include <stdio.h>
-
+#include "clib_btype.h"
 
 /**
  * the function strsplit comefrom internet the  author can email me
@@ -50,6 +50,11 @@ char *string_strstr(char * str, char *substr);//找出子串第一次出现的�
 
 char * string_malloc(char ** str,int n);//这只是一个函数内部修改指针本身的一个例子
 
+int string_ascii_to_bin(uint8 *pascii, int asciilen, uint8 *pbin, int *binlen);
+
+int string_bin_to_ascii(char *pbin, int binlen, uint8 *pascii, int *asclen);
+
+int string_get_midstr_between_space(char *srcstr ,char * dstbuf, size_t dstbufsize);
 
 #ifdef __cplusplus
 }

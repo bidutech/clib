@@ -7,6 +7,89 @@
 #include <ctype.h>
 #include "clib_string.h"
 
+
+int
+ string_get_midstr_between_space(char *srcstr ,char * dstbuf, size_t dstbufsize)
+{
+
+//char *httpheader="GET /Service.do?Action=startv1&srvlst=(null)&
+//url='http://cdn.voole.com:3580/?data='test'' HTTP/1.1
+//\r\nHost: 127.0.0.1:5658\r\nAccept: */*
+//  \r\nRange: bytes=0-\r\nConnection: close";
+
+    char * p, * p1;
+    p = srcstr;
+    while(*p == ' ' || *p == '\t') p++;
+    while(*p != ' ' && *p != '\t') p++;
+    while(*p == ' ' || *p == '\t') p++;
+    p1 = p;
+    while(*p1 != ' ' && *p1 != '\t') p1++;
+    if(p1 - p + 1 < dstbufsize){
+        memcpy(dstbuf, p, p1 - p);
+        dstbuf[p1 - p] = '\0';
+        return 0;
+    }else{
+        return -1;
+    }
+}
+int
+string_bin_to_ascii(char *pbin, int binlen, uint8 *pascii, int *asclen)
+{
+    int i = 0, covind = 0;
+    uint8   byte = 0;
+
+    if (!pbin || binlen < 1) return -1;
+    if (!pascii) return -2;
+
+    for (i=0, covind=0; i<binlen; i++) {
+        byte = ((pbin[i] >> 4) & 0x0F);
+        if (byte < 10) pascii[covind++] = byte + '0';
+        else if (byte < 16) pascii[covind++] = byte + 'A' - 10;
+        else pascii[covind++] = '.';
+
+        byte = (pbin[i] & 0x0F);
+        if (byte < 10) pascii[covind++] = byte + '0';
+        else if (byte < 16) pascii[covind++] = byte + 'A' - 10;
+        else pascii[covind++] = '.';
+    }
+
+    if (asclen) *asclen = covind;
+    return covind;
+}
+
+int
+string_ascii_to_bin(uint8 *pascii, int asciilen, uint8 *pbin, int *binlen)
+{
+    int i, conind;
+    uint8  byte = 0;
+
+    if (!pascii || asciilen < 1) return -1;
+
+    for (i=0, conind=0; i<asciilen; i++) {
+        byte <<= 4;
+        if (pascii[i] >= 'a' && pascii[i] <= 'f')
+            byte |= pascii[i] - 'a' + 10;
+        else if (pascii[i] >= 'A' && pascii[i] <= 'F')
+            byte |= pascii[i] - 'A' + 10;
+        else if (pascii[i] >= '0' && pascii[i] <= '9')
+            byte |= pascii[i] - '0';
+        else
+            return -100;
+
+        if ((i+1)%2 == 0) {
+            pbin[conind++] = byte;
+            byte = 0;
+        }
+    }
+
+    if (binlen) *binlen = conind;
+
+    return conind;
+}
+
+
+
+
 /**
  * Split a string into some strings according to a list of separators.
  *
