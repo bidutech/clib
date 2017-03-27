@@ -11,6 +11,11 @@ extern "C" {
 #include <stdio.h>
 #include "clib_btype.h"
 
+
+
+
+int string_up_to_lower(char *buf, int len);
+
 /**
  * the function strsplit comefrom internet the  author can email me
  * */

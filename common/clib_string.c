@@ -7,6 +7,17 @@
 #include <ctype.h>
 #include "clib_string.h"
 
+int
+string_up_to_lower(char *buf, int len)
+{
+  int i = 0;
+  char dif = 'a' - 'A';
+
+  for(; i < len; ++i)
+      if(buf[i] >= 'A' && buf[i] <= 'Z')
+          buf[i] += dif;
+  return 0;
+}
 
 int
  string_get_midstr_between_space(char *srcstr ,char * dstbuf, size_t dstbufsize)
