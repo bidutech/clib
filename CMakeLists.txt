@@ -33,6 +33,9 @@ set(SOURCE_FILES
         common/clib_http_url.h
         common/clib_http_url.c
         common/clib_btype.h
+        common/clib_des.c
+        common/clib_des.h
+
         test/stringtest.h
         test/stringtest.c
 

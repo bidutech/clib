@@ -1,0 +1,95 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BEGIN_YEAR	clib_time.c	/^static const int BEGIN_YEAR = 1901;$/;"	v	file:
+BUF_SIZE	clib_http_url.c	374;"	d	file:
+CH_DAY	clib_time.c	/^static const char *CH_DAY ="日";$/;"	v	file:
+CH_DAY_V	clib_time.c	/^static  const char *CH_DAY_V[] ={"*","初一","初二","初三","初四","初五",$/;"	v	file:
+CH_LEAP	clib_time.c	/^static const char *CH_LEAP = "闰";$/;"	v	file:
+CH_MONTH	clib_time.c	/^static const char *CH_MONTH = "月";$/;"	v	file:
+CH_MONTH_V	clib_time.c	/^static  const char *CH_MONTH_V[] ={"*","正","二","三","四","五","六",$/;"	v	file:
+CH_NUMBER_V	clib_time.c	/^static const char *CH_NUMBER_V[] ={"零","一","二","三","四","五",$/;"	v	file:
+CH_SP	clib_time.c	/^static const char *CH_SP = "";$/;"	v	file:
+CH_YEAR	clib_time.c	/^static const char *CH_YEAR = "年";$/;"	v	file:
+CLIB_BTYPE_H	clib_btype.h	9;"	d
+CLIB_CLIBSTRING_H	clib_string.h	6;"	d
+CLIB_CONF_	clib_conf.h	7;"	d
+CLIB_FILES_	clib_file.h	2;"	d
+CLIB_HTTP_H	clib_http.h	10;"	d
+CLIB_HTTP_URL_H	clib_http_url.h	9;"	d
+CLIB_INI_ParseParamBool	clib_conf.h	39;"	d
+CLIB_INI_ParseParamFloat	clib_conf.h	34;"	d
+CLIB_INI_ParseParamHex	clib_conf.h	30;"	d
+CLIB_INI_ParseParamInt	clib_conf.h	25;"	d
+CLIB_INI_ParseParamString	clib_conf.h	19;"	d
+CLIB_TIMER_H	clib_time.h	2;"	d
+CONF_LINE_MAX	clib_conf.c	13;"	d	file:
+CheckIpLegal	clib_http_url.c	/^static int CheckIpLegal(const char *ip_addr)$/;"	f	file:
+KEY_SIZE	clib_http_url.c	373;"	d	file:
+LINE_DIM	clib_conf.c	59;"	d	file:
+LUNAR_YEARS	clib_time.c	/^static const unsigned int LUNAR_YEARS[199] = {$/;"	v	file:
+MAX_CH_DATE_LEN	clib_time.h	11;"	d
+NUMBER_YEAR	clib_time.c	/^static const int NUMBER_YEAR = 199;$/;"	v	file:
+TempPP	clib_conf.h	/^static char *TempPP = NULL;$/;"	v
+clib_conf_ini_writeconf	clib_conf.c	/^int clib_conf_ini_writeconf(const char *confpath, const char *key, const char *value,int fflag\/*1: key="value",0:key=value*\/)$/;"	f
+clib_conf_parse_ini_param	clib_conf.c	/^char* clib_conf_parse_ini_param(const char* FileName, char *VariableName)$/;"	f
+clib_file_can_wr	clib_file.c	/^clib_file_can_wr(char *path)$/;"	f
+clib_file_current_path	clib_file.c	/^int clib_file_current_path(char ** ppath)$/;"	f
+clib_file_disk_freespace	clib_file.c	/^clib_file_disk_freespace(char *filepath)$/;"	f
+clib_http_socket_available	clib_http.c	/^clib_http_socket_available(int fd)$/;"	f
+clib_http_socket_available_1	clib_http.c	/^clib_http_socket_available_1(int fd)$/;"	f
+clib_http_url_decode	clib_http_url.c	/^char *clib_http_url_decode(char *str)$/;"	f
+clib_http_url_encode	clib_http_url.c	/^char *clib_http_url_encode(const char *src, char *dest, size_t ulen)$/;"	f
+clib_http_url_from_header	clib_http_url.c	/^clib_http_url_from_header(char * httpheader, char * buf, size_t bufsize)$/;"	f
+clib_http_url_get_host_port	clib_http_url.c	/^clib_http_url_get_host_port(char *url,char *host,char *port)$/;"	f
+clib_http_url_get_int	clib_http_url.c	/^int clib_http_url_get_int(const char *src, const char *key, int *val)$/;"	f
+clib_http_url_get_uint	clib_http_url.c	/^int clib_http_url_get_uint(const char *src, const char *key, unsigned int *val)$/;"	f
+clib_http_url_get_uint64	clib_http_url.c	/^int clib_http_url_get_uint64(const char *src, const char *key, uint64_t *val)$/;"	f
+clib_http_url_get_value	clib_http_url.c	/^int clib_http_url_get_value(const char *src, const char *varname, char *buf, int blen)$/;"	f
+clib_http_url_local_ip	clib_http_url.c	/^int clib_http_url_local_ip(char *buf, int len)$/;"	f
+clib_http_url_parse_ip	clib_http_url.c	/^char *clib_http_url_parse_ip(uint32_t uip, char* buf, int len)$/;"	f
+clib_http_url_parse_xml	clib_http_url.c	/^int clib_http_url_parse_xml(const char *xml, char *key, char *val, int size)$/;"	f
+clib_http_url_set_value	clib_http_url.c	/^int clib_http_url_set_value(const char *varname, const char *varvalue, char *obj, int olen)$/;"	f
+clib_http_url_string_append	clib_http_url.c	/^void clib_http_url_string_append(char *str, unsigned int len, const char *fmt, ...)$/;"	f
+clib_http_url_strrstr	clib_http_url.c	/^char *clib_http_url_strrstr(char *s1, char *s2)$/;"	f
+clib_http_url_trim	clib_http_url.c	/^void clib_http_url_trim(char *buf)$/;"	f
+day	clib_time.h	/^    int day;$/;"	m	struct:time_lunar_date
+get_ifacename	clib_http_url.c	/^static int get_ifacename(char *iface_name, size_t size)$/;"	f	file:
+ip_address	clib_http_url.c	/^static int ip_address(char *iface_name, char *ip, size_t size)$/;"	f	file:
+leap	clib_time.h	/^    bool leap;$/;"	m	struct:time_lunar_date
+local_ip	clib_http_url.c	/^int local_ip(int family, char *buf, int len)$/;"	f
+lunardate	clib_time.h	/^typedef struct time_lunar_date  lunardate;$/;"	t	typeref:struct:time_lunar_date
+month	clib_time.h	/^    int month;$/;"	m	struct:time_lunar_date
+solardate	clib_time.h	/^typedef struct time_lunar_date  solardate;$/;"	t	typeref:struct:time_lunar_date
+string_ascii_to_bin	clib_string.c	/^string_ascii_to_bin(uint8 *pascii, int asciilen, uint8 *pbin, int *binlen)$/;"	f
+string_bin_to_ascii	clib_string.c	/^string_bin_to_ascii(char *pbin, int binlen, uint8 *pascii, int *asclen)$/;"	f
+string_get_midstr_between_space	clib_string.c	/^ string_get_midstr_between_space(char *srcstr ,char * dstbuf, size_t dstbufsize)$/;"	f
+string_hex_to_string	clib_string.c	/^int string_hex_to_string(char *hex, char *ch)$/;"	f
+string_hexchar_tovalue	clib_string.c	/^int string_hexchar_tovalue(const char ch){$/;"	f
+string_malloc	clib_string.c	/^char *string_malloc(char ** str,int n)\/\/这只是一个函数内部修改指针本身的一个例子$/;"	f
+string_print_hex	clib_string.c	/^void string_print_hex(unsigned char *src, int srclen, char *des, int deslen)$/;"	f
+string_split	clib_string.c	/^string_split(char ***dest, int *count, char *s_str, char **separator, int number_separators, int compress_separator,$/;"	f
+string_strstr	clib_string.c	/^char *string_strstr(char * str, char *substr) {$/;"	f
+string_to_hex	clib_string.c	/^int string_to_hex(char *ch, char *hex)$/;"	f
+string_up_to_lower	clib_string.c	/^string_up_to_lower(char *buf, int len)$/;"	f
+string_value_to_hexchar	clib_string.c	/^char string_value_to_hexchar(const int value)$/;"	f
+strncasestr	clib_http_url.c	/^static char *strncasestr(char *str, const char *sub)$/;"	f	file:
+time_day_of_solaryear	clib_time.c	/^time_day_of_solaryear(int year, int month, int day )$/;"	f
+time_diff_ms	clib_time.c	/^time_diff_ms(struct timeval newer, struct timeval older)$/;"	f
+time_elapsed_time	clib_time.c	/^time_elapsed_time()$/;"	f
+time_lunar_date	clib_time.h	/^struct time_lunar_date$/;"	s
+time_lunardate	clib_time.c	/^lunardate time_lunardate(int solar_year,int solar_month,int solar_day)$/;"	f
+time_lunardate_to_callocstr	clib_time.c	/^time_lunardate_to_callocstr(lunardate lunar_date)$/;"	f
+time_lunardateto_ch_str_r	clib_time.c	/^time_lunardateto_ch_str_r(lunardate lunar_date,char *buf)$/;"	f	file:
+time_now_lunardate	clib_time.c	/^time_now_lunardate()$/;"	f
+time_now_ms	clib_time.c	/^time_now_ms(void)$/;"	f
+time_now_s	clib_time.c	/^time_now_s(void)$/;"	f
+time_now_solardate	clib_time.c	/^time_now_solardate()$/;"	f
+time_now_tv	clib_time.c	/^time_now_tv(void)$/;"	f
+time_today_callocstring	clib_time.c	/^time_today_callocstring()$/;"	f
+uint8	clib_btype.h	/^typedef char                uint8;$/;"	t
+util_htoi	clib_http_url.c	/^static int util_htoi(char *s)$/;"	f	file:
+year	clib_time.h	/^    int year;$/;"	m	struct:time_lunar_date

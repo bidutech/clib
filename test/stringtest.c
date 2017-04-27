@@ -30,6 +30,7 @@ void test_conf(){
     clib_conf_ini_writeconf(path,"updateurl","www.baidu.com",1);
     clib_conf_ini_writeconf(path,"intertime","3000",0);
     clib_conf_ini_writeconf(path,"httpport","8080",0);
+    clib_conf_ini_writeconf(path,"p2pport","9980",0);
 
 
 
@@ -54,8 +55,15 @@ void test_file(){
   char *path=NULL;
   int pathlen=0;
   pathlen=clib_file_current_path(&path);
+	if(path ==NULL)
+	return;
   printf("pathlen:%d,path:%s\n",pathlen,path);
+
+	printf("path total space:%llu\n",clib_file_disk_totalspace(path));
+
   free(path);
+
+
   path =NULL;
 
 }
