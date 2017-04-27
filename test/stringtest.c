@@ -13,51 +13,51 @@
 #include "clib_file.h"
 
 void test_conf(){
- char  *path="test.ini";
-  char *p = clib_conf_parse_ini_param(path, "processname");
+	char  *path="test.ini";
+	char *p = clib_conf_parse_ini_param(path, "processname");
 
-  if (!p) return ;
-  char *proname = calloc(1,strlen(p) + 1);
-  strncpy(proname, p, strlen(p));
+	if (!p) return ;
+	char *proname = calloc(1,strlen(p) + 1);
+	strncpy(proname, p, strlen(p));
 
-  int port = 0;
-  CLIB_INI_ParseParamInt(path, "httpport", port);
-  if (port <= 0) {
-      port = 3300;
-  }
-    printf("processname:%s,httpport:%d\n",proname,port);
+	int port = 0;
+	CLIB_INI_ParseParamInt(path, "httpport", port);
+	if (port <= 0) {
+		port = 3300;
+	}
+	printf("processname:%s,httpport:%d\n",proname,port);
 
-    clib_conf_ini_writeconf(path,"updateurl","www.baidu.com",1);
-    clib_conf_ini_writeconf(path,"intertime","3000",0);
-    clib_conf_ini_writeconf(path,"httpport","8080",0);
-    clib_conf_ini_writeconf(path,"p2pport","9980",0);
-
-
+	clib_conf_ini_writeconf(path,"updateurl","www.baidu.com",1);
+	clib_conf_ini_writeconf(path,"intertime","3000",0);
+	clib_conf_ini_writeconf(path,"httpport","8080",0);
+	clib_conf_ini_writeconf(path,"p2pport","9980",0);
 
 
-    char *p1 = clib_conf_parse_ini_param(path, "updateurl");
 
-    if (!p1) return ;
-    char *updateurl = calloc(1,strlen(p1) + 1);
-    strncpy(updateurl, p1, strlen(p1));
 
-    int intertime = 0;
-    CLIB_INI_ParseParamInt(path, "intertime", intertime);
-    if (intertime <= 0) {
-        intertime = 3300;
-    }
-    printf("updateurl:%s,intertime:%d\n",updateurl,intertime);
-    free(updateurl);
-    free(proname);
+	char *p1 = clib_conf_parse_ini_param(path, "updateurl");
+
+	if (!p1) return ;
+	char *updateurl = calloc(1,strlen(p1) + 1);
+	strncpy(updateurl, p1, strlen(p1));
+
+	int intertime = 0;
+	CLIB_INI_ParseParamInt(path, "intertime", intertime);
+	if (intertime <= 0) {
+		intertime = 3300;
+	}
+	printf("updateurl:%s,intertime:%d\n",updateurl,intertime);
+	free(updateurl);
+	free(proname);
 
 }
 void test_file(){
-  char path[1000]={0};
-  int pathlen=1000;
-  pathlen=clib_file_current_path(path,pathlen);
+	char path[1000]={0};
+	int pathlen=1000;
+	pathlen=clib_file_current_path(path,pathlen);
 	if(path ==NULL)
-	return;
-  printf("pathlen:%d,path:%s\n",pathlen,path);
+		return;
+	printf("pathlen:%d,path:%s\n",pathlen,path);
 
 	printf("path total space:%llu\n",clib_file_disk_totalspace(path));
 
