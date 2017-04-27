@@ -4,19 +4,29 @@
 #include <clib_file.h>
 #include <sys/vfs.h>
 
-int clib_file_current_path(char ** ppath)
+int 
+clib_file_current_path(char * ppath,int pathlen)
 {
-		int pathlen=0;
+		if( pathlen <=  0){
+			return 0;	
+		}
 		char *lpath=NULL;
 		char link[1024]={0};
 		char path[1024]={0};
+		if(ppath == NULL)
+			return 0;
 		sprintf(link, "/proc/%d/exe", getpid());
 		pathlen=readlink(link, path, sizeof(path));
 		/*if(pathlen===错误处理===strlen(path))*/
 		lpath=calloc(1,strlen(path)+1);
 		strncpy(lpath,path,strlen(path));
 		*ppath = lpath;
-		return pathlen;
+		
+		strncpy(ppath,lpath,pathlen);
+		ppath[pathlen]='\0';
+		free(lpath);
+		lpath = NULL;	
+		return strlen(ppath);
 }
 
 int

@@ -52,19 +52,14 @@ void test_conf(){
 
 }
 void test_file(){
-  char *path=NULL;
-  int pathlen=0;
-  pathlen=clib_file_current_path(&path);
+  char path[1000]={0};
+  int pathlen=1000;
+  pathlen=clib_file_current_path(path,pathlen);
 	if(path ==NULL)
 	return;
   printf("pathlen:%d,path:%s\n",pathlen,path);
 
 	printf("path total space:%llu\n",clib_file_disk_totalspace(path));
-
-  free(path);
-
-
-  path =NULL;
 
 }
 void timenow(){
