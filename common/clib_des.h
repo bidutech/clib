@@ -4,6 +4,13 @@
 	> Mail: li
 	> Created Time: 2017年04月27日 星期四 11时05分42秒
  ************************************************************************/
+#ifndef  CLIB_DES_
+#define  CLIB_DES_
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define PLAIN_FILE_OPEN_ERROR -1
 #define KEY_FILE_OPEN_ERROR -2
 #define CIPHER_FILE_OPEN_ERROR -3
@@ -29,3 +36,9 @@ int DES_EncryptBlock(ElemType plainBlock[8], ElemType subKeys[16][48], ElemType 
 int DES_DecryptBlock(ElemType cipherBlock[8], ElemType subKeys[16][48], ElemType plainBlock[8]);
 int DES_Encrypt(char *plainFile, char *keyStr,char *cipherFile);
 int DES_Decrypt(char *cipherFile, char *keyStr,char *plainFile);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

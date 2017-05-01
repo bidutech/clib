@@ -141,7 +141,7 @@ lunardate ldate =time_lunardate(2008,8,2);
 ************************************************************************/
 
 solardate
-time_now_solardate()
+clib_time_now_solardate()
 {
     solardate solar_date ;
     struct tm *newtime;
@@ -155,17 +155,17 @@ time_now_solardate()
 }
 
 lunardate
-time_now_lunardate()
+clib_time_now_lunardate()
 {
     solardate solar_date;
     lunardate lunar_date;
-    solar_date = time_now_solardate();
-    lunar_date = time_lunardate(solar_date.year,solar_date.month,solar_date.day);
+    solar_date = clib_time_now_solardate();
+    lunar_date = clib_time_lunardate(solar_date.year,solar_date.month,solar_date.day);
     return  lunar_date;
 }
 //计算这个公历日期是一年中的第几天
 int
-time_day_of_solaryear(int year, int month, int day )
+clib_time_day_of_solaryear(int year, int month, int day )
 {
     //为了提高效率，记录每月一日是一年中的第几天
     static const int NORMAL_YDAY[12] = {1,32,60,91,121,152,
@@ -188,15 +188,17 @@ time_day_of_solaryear(int year, int month, int day )
 
 
 char *
-time_lunardate_to_callocstr(lunardate lunar_date)
+clib_time_lunardate_to_callocstr(lunardate lunar_date)
 {
     char *buf=calloc(1,MAX_CH_DATE_LEN+1);
-    return time_lunardateto_ch_str_r(lunar_date,buf);
+    clib_time_lunardateto_ch_str_r(lunar_date,buf);
+    return buf;
 }
 
 
 
-lunardate time_lunardate(int solar_year,int solar_month,int solar_day)
+lunardate 
+clib_time_lunardate(int solar_year,int solar_month,int solar_day)
 {
     lunardate luanr_date ;
     luanr_date.year = solar_year;
@@ -215,9 +217,9 @@ lunardate time_lunardate(int solar_year,int solar_month,int solar_day)
     int spring_ny_day = ( LUNAR_YEARS[year_index] & 0x1f);
 
     //计算今天是公历年的第几天
-    int today_solar_yd = time_day_of_solaryear(solar_year,solar_month,solar_day);
+    int today_solar_yd = clib_time_day_of_solaryear(solar_year,solar_month,solar_day);
     //计算春节是公历年的第几天
-    int spring_ny_yd = time_day_of_solaryear(solar_year,spring_ny_month,spring_ny_day);
+    int spring_ny_yd = clib_time_day_of_solaryear(solar_year,spring_ny_month,spring_ny_day);
     //计算今天是农历年的第几天
     int today_luanr_yd = today_solar_yd - spring_ny_yd + 1;
     //如果今天在春节的前面，重新计算today_luanr_yd
@@ -231,9 +233,9 @@ lunardate time_lunardate(int solar_year,int solar_month,int solar_day)
             return luanr_date;
         spring_ny_month = ( LUNAR_YEARS[year_index] & 0x60 ) >> 5;
         spring_ny_day = ( LUNAR_YEARS[year_index] & 0x1f);
-        spring_ny_yd = time_day_of_solaryear(solar_year,spring_ny_month,spring_ny_day);
+        spring_ny_yd = clib_time_day_of_solaryear(solar_year,spring_ny_month,spring_ny_day);
 
-        int year_total_day = time_day_of_solaryear(luanr_date.year,12,31);
+        int year_total_day = clib_time_day_of_solaryear(luanr_date.year,12,31);
         today_luanr_yd = today_solar_yd + year_total_day - spring_ny_yd + 1;
     }
 
@@ -265,8 +267,9 @@ lunardate time_lunardate(int solar_year,int solar_month,int solar_day)
 }
 
 
-static char *
-time_lunardateto_ch_str_r(lunardate lunar_date,char *buf)
+//char *
+void 
+clib_time_lunardateto_ch_str_r(lunardate lunar_date,char *buf)
 {
     if(lunar_date.year >= 1000);
     assert(lunar_date.year <= 9999);
@@ -325,7 +328,7 @@ time_lunardateto_ch_str_r(lunardate lunar_date,char *buf)
     pbuf = '\0';
     assert(pbuf - buf <= MAX_CH_DATE_LEN);
 
-    return buf;
+    //return buf;
 }
 
 
@@ -346,7 +349,7 @@ __suseconds_t tv_usec;  //Microseconds.
 *************************************************************/
 
 struct timeval
-time_now_tv(void)
+clib_time_now_tv(void)
 {
     struct timeval tv;
     gettimeofday(&tv, NULL);
@@ -354,7 +357,7 @@ time_now_tv(void)
 }
 
 long
-time_now_s(void)
+clib_time_now_s(void)
 {
 
     struct timeval tv;
@@ -363,7 +366,7 @@ time_now_s(void)
 }
 
 long long
-time_now_ms(void)
+clib_time_now_ms(void)
 {
 
     struct timeval tv;
@@ -373,7 +376,7 @@ time_now_ms(void)
 }
 
 long long
-time_diff_ms(struct timeval newer, struct timeval older)
+clib_time_diff_ms(struct timeval newer, struct timeval older)
 {
 
     return (newer.tv_sec-older.tv_sec)*1000 +  (newer.tv_usec-older.tv_usec)/1000;
@@ -386,7 +389,7 @@ time_diff_ms(struct timeval newer, struct timeval older)
 可以看到每过千分之一秒（1毫秒）
  */
 long
-time_elapsed_time()
+clib_time_elapsed_time()
 {
 
     return clock()/CLOCKS_PER_SEC;
@@ -400,7 +403,7 @@ time_elapsed_time()
  即2017年1月29日30日15点18分30秒
  * */
 char *
-time_today_callocstring()
+clib_time_today_callocstring()
 {
     struct tm *newtime;
     char *todaystr=calloc(1,128);

@@ -66,20 +66,20 @@ void timenow(){
 
 
     struct timeval now,future;
-    now =time_now_tv();
+    now =clib_time_now_tv();
     sleep(1);
-    future=time_now_tv();
-    printf("time run :%lld\n",time_diff_ms(future,now));
-    printf("now:%ld\n",time_now_s());
+    future=clib_time_now_tv();
+    printf("time run :%lld\n",clib_time_diff_ms(future,now));
+    printf("now:%ld\n",clib_time_now_s());
     printf("****************\n");
-    char *today =time_today_callocstring();
+    char *today =clib_time_today_callocstring();
     if(today){
         printf("today:%s\n",today);
     }
 
-    lunardate  lunar_date =time_now_lunardate();
+    lunardate  lunar_date =clib_time_now_lunardate();
 
-    char * buf = time_lunardate_to_callocstr(lunar_date);
+    char * buf = clib_time_lunardate_to_callocstr(lunar_date);
     printf("now_lunar_date:%s\n",buf);
 
 

@@ -27,32 +27,32 @@ struct time_lunar_date
     bool leap;
 };
 
-solardate time_now_solardate();//年 月 日
+solardate clib_time_now_solardate();//年 月 日
 
-lunardate time_now_lunardate();//当前农历年月日
+lunardate clib_time_now_lunardate();//当前农历年月日
 
-char * time_lunardate_to_callocstr(lunardate lunar_date);//获取农历字符串 “二零一七年二月初二”
+char * clib_time_lunardate_to_callocstr(lunardate lunar_date);//获取农历字符串 “二零一七年二月初二”
 
 
-lunardate time_lunardate(int solar_year,int solar_month,int solar_day);//公历年月日转农历
+lunardate clib_time_lunardate(int solar_year,int solar_month,int solar_day);//公历年月日转农历
 
 //计算这个公历日期是一年中的第几天
-int time_day_of_solaryear(int year, int month, int day );
+int clib_time_day_of_solaryear(int year, int month, int day );
 
 
-long time_now_s(void);
+long clib_time_now_s(void);
 
-long long  time_now_ms(void);/*long long 防止在32位设备溢出 gettimeofday取毫秒的溢出*/
+long long  clib_time_now_ms(void);/*long long 防止在32位设备溢出 gettimeofday取毫秒的溢出*/
 
-struct timeval time_now_tv(void);
-
-
-long long  time_diff_ms(struct timeval newer, struct timeval older);//返回时间间隔单位毫秒
+struct timeval clib_time_now_tv(void);
 
 
-long time_elapsed_time();//返回进程运行时间
+long long  clib_time_diff_ms(struct timeval newer, struct timeval older);//返回时间间隔单位毫秒
 
-char * time_today_callocstring();//Today is Sunday, day 29 of January in the year 2017
+
+long clib_time_elapsed_time();//返回进程运行时间
+
+char * clib_time_today_callocstring();//Today is Sunday, day 29 of January in the year 2017
 
 
 #ifdef __cplusplus
