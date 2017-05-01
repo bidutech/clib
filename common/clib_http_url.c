@@ -579,7 +579,7 @@ void clib_http_url_trim(char *buf)
 int
 clib_http_url_from_header(char * httpheader, char * buf, size_t bufsize)
 {
-  return string_get_midstr_between_space(httpheader,buf,bufsize);
+  return clib_string_get_midstr_between_space(httpheader, buf, bufsize);
 }
 
 int

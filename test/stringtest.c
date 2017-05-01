@@ -87,7 +87,7 @@ void timenow(){
 int teststrsplit(){
     char *str=NULL;
     char *str1=NULL;
-    str1=string_malloc(&str,100);
+    str1= clib_string_malloc(&str, 100);
 
     strcpy(str1,"hello---------------- word!\n");
     printf(str1);
@@ -98,7 +98,7 @@ int teststrsplit(){
         char *str = "a\nababa\nbbaabab--aaab";
         char **result = NULL;
         int n_str = 0;
-        int i = string_split(&result, &n_str, str, separator, 2, 0, 1);
+        int i = clib_string_split(&result, &n_str, str, separator, 2, 0, 1);
         for (i = 0; i < n_str; i++){
             char tem[1024];
             //printf("%d\n",sizeof(result[i]));
@@ -133,9 +133,9 @@ int teststrprinthx(){
     printf("the src string:%s\n",ch);
 
 
-    string_to_hex(p_ch, p_hex);
+    clib_string_to_hex(p_ch, p_hex);
     printf("the hex is:%s\n",p_hex);
-    string_hex_to_string(p_hex, p_result);
+    clib_string_hex_to_string(p_hex, p_result);
     printf("the src string:%s\n", p_result);
     return 0;
 }
@@ -144,7 +144,7 @@ int printhextest(){
     char *p= "hello D0 word";
     char *des= (char*)malloc(strlen(p));
 
-    string_print_hex((u_char *) p, strlen(p), des, strlen(p));
+    clib_string_print_hex((u_char *) p, strlen(p), des, strlen(p));
     printf("src string is:%s\n",p);
     printf("des string is:%s\n",des);
 }

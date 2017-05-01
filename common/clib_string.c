@@ -20,7 +20,7 @@ string_up_to_lower(char *buf, int len)
 }
 
 int
- string_get_midstr_between_space(char *srcstr ,char * dstbuf, size_t dstbufsize)
+ clib_string_get_midstr_between_space(char *srcstr, char *dstbuf, size_t dstbufsize)
 {
 
 //char *httpheader="GET /Service.do?Action=startv1&srvlst=(null)&
@@ -44,7 +44,7 @@ int
     }
 }
 int
-string_bin_to_ascii(char *pbin, int binlen, uint8 *pascii, int *asclen)
+clib_string_bin_to_ascii(char *pbin, int binlen, uint8 *pascii, int *asclen)
 {
     int i = 0, covind = 0;
     uint8   byte = 0;
@@ -69,7 +69,7 @@ string_bin_to_ascii(char *pbin, int binlen, uint8 *pascii, int *asclen)
 }
 
 int
-string_ascii_to_bin(uint8 *pascii, int asciilen, uint8 *pbin, int *binlen)
+clib_string_ascii_to_bin(uint8 *pascii, int asciilen, uint8 *pbin, int *binlen)
 {
     int i, conind;
     uint8  byte = 0;
@@ -114,8 +114,9 @@ string_ascii_to_bin(uint8 *pascii, int asciilen, uint8 *pbin, int *binlen)
  * @Param keep_separator            in:  the separators will be put into parameter 'dest' if keep_separator > 0
  */
 int
-string_split(char ***dest, int *count, char *s_str, char **separator, int number_separators, int compress_separator,
-             int keep_separator)
+clib_string_split(char ***dest, int *count, char *s_str, char **separator, int number_separators,
+                  int compress_separator,
+                  int keep_separator)
 {
     int i = 0;
     char **result = NULL;
@@ -282,7 +283,7 @@ string_split(char ***dest, int *count, char *s_str, char **separator, int number
 当我们使用printf("%s",p_ch);输出时会杂乱无章，如果采用16进制，代码如下：
  this code come from internet please author email me.
  * */
-int string_to_hex(char *ch, char *hex)
+int clib_string_to_hex(char *ch, char *hex)
 {
     int high,low;
     int tmp = 0;
@@ -298,15 +299,15 @@ int string_to_hex(char *ch, char *hex)
         tmp = (int)*ch;
         high = tmp >> 4;
         low = tmp & 15;
-        *hex++ = string_value_to_hexchar(high); //先写高字节
-        *hex++ = string_value_to_hexchar(low); //其次写低字节
+        *hex++ = clib_string_value_to_hexchar(high); //先写高字节
+        *hex++ = clib_string_value_to_hexchar(low); //其次写低字节
         ch++;
     }
     *hex = '\0';
     return 0;
 }
 
-int string_hex_to_string(char *hex, char *ch)
+int clib_string_hex_to_string(char *hex, char *ch)
 {
     int high,low;
     int tmp = 0;
@@ -319,13 +320,13 @@ int string_hex_to_string(char *hex, char *ch)
     }
 
     while(*hex){
-        high = string_hexchar_tovalue(*hex);
+        high = clib_string_hexchar_tovalue(*hex);
         if(high < 0){
             *ch = '\0';
             return -3;
         }
         hex++; //指针移动到下一个字符上
-        low = string_hexchar_tovalue(*hex);
+        low = clib_string_hexchar_tovalue(*hex);
         if(low < 0){
             *ch = '\0';
             return -3;
@@ -338,7 +339,7 @@ int string_hex_to_string(char *hex, char *ch)
     return 0;
 }
 
-int string_hexchar_tovalue(const char ch){
+int clib_string_hexchar_tovalue(const char ch){
     int result = 0;
     //获取16进制的高字节位数据
     if(ch >= '0' && ch <= '9'){
@@ -356,7 +357,7 @@ int string_hexchar_tovalue(const char ch){
     return result;
 }
 
-char string_value_to_hexchar(const int value)
+char clib_string_value_to_hexchar(const int value)
 {
     char result = '\0';
     if(value >= 0 && value <= 9){
@@ -373,7 +374,7 @@ char string_value_to_hexchar(const int value)
 }
 
 //如果字符含有不可打印字符 则把该字符打印16进制
-void string_print_hex(unsigned char *src, int srclen, char *des, int deslen)
+void clib_string_print_hex(unsigned char *src, int srclen, char *des, int deslen)
 {
     if(src==NULL || des ==NULL)
     {
@@ -408,7 +409,7 @@ void string_print_hex(unsigned char *src, int srclen, char *des, int deslen)
 }
 
 //找出子串第一次出现的位置
-char *string_strstr(char * str, char *substr) {
+char *clib_string_strstr(char *str, char *substr) {
     char *p0;
     char *p1;
     char *p2;
@@ -441,7 +442,7 @@ char *string_strstr(char * str, char *substr) {
     return p0;
 }
 
-char *string_malloc(char ** str,int n)//这只是一个函数内部修改指针本身的一个例子
+char *clib_string_malloc(char **str, int n)//这只是一个函数内部修改指针本身的一个例子
 {
     *str=(char*)malloc(n);
     return  *str;
