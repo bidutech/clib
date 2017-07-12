@@ -12,6 +12,9 @@
 extern "C" {
 #endif
 
+/*
+ ip2long long toip used by :used ip->long sa hash key
+ * */
 u_long 
 clib_http_ip2long(char *ip);
 
