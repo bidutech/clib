@@ -36,6 +36,8 @@ set(SOURCE_FILES
         common/clib_des.c
         common/clib_des.h
 
+        common/clib_system.h
+        common/clib_system.c
         test/stringtest.h
         test/stringtest.c
 
