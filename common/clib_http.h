@@ -12,9 +12,17 @@
 extern "C" {
 #endif
 
+u_long 
+clib_http_ip2long(char *ip);
 
-int clib_http_socket_available_1(int fd);
-int clib_http_socket_available(int fd);
+char * 
+clib_http_long2ip(u_long in);
+
+int 
+clib_http_socket_available_1(int fd);
+
+int 
+clib_http_socket_available(int fd);
 
 #ifdef __cplusplus
 }

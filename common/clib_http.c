@@ -12,6 +12,25 @@
 
 #include "clib_http.h"
 
+char *
+clib_http_long2ip(u_long in)
+{
+    u_char *p;
+    p = (u_char*)(&in);
+    static char output[16];
+    snprintf(output,16,"%d.%d.%d.%d",p[0],p[1],p[2],p[3]);
+    return output;
+}
+
+u_long 
+clib_http_ip2long(char *ip)
+{
+    u_char addr[16];
+    sscanf(ip,"%d.%d.%d.%d",addr,addr+1,addr+2,addr+3);
+    u_long *vl = (u_long*)(&addr);
+    return *vl;
+}
+
 int
 clib_http_socket_available_1(int fd)
 {
