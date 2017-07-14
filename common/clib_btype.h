@@ -20,7 +20,7 @@ extern "C" {
 #include <assert.h>
 #include <ctype.h>
 
-typedef char                uint8;
+typedef  unsigned char                uint8;
 
 
 
