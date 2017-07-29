@@ -12,6 +12,42 @@
 extern "C" {
 #endif
 
+/********************************
+* MAXADDRS is max ip item num
+********************************/
+#define MAXADDRS  32 
+
+#define IP_BUFFERSIZE 4000
+
+#define clib_min(a,b) ((a) < (b) ? (a) : (b))
+#define clib_max(a,b) ((a) > (b) ? (a) : (b))
+
+
+typedef int (*pfun_ipinit)(void *);
+
+typedef struct CLIBIPINFO{
+    char *ifa_names[MAXADDRS];
+    char *ip_names[MAXADDRS];
+    char *hw_addrs[MAXADDRS];
+    int ip_count;
+    int ip6_count;
+    unsigned long ip_addrs[MAXADDRS];
+    unsigned long ip_addrs_v6[MAXADDRS];
+    pfun_ipinit pInit;
+    pfun_ipinit pfree;
+    
+    
+
+}CLIB_IP_INFO,clib_ip_type;
+
+
+
+int clib_http_init_ip(void *ipinfo);
+int clib_http_free_ip(void * ipinfo);
+int clib_http_get_ip_v2(void * ipinfo);
+int clib_http_get_ip_v1(void * ipinfo);
+
+
 /*
  ip2long long toip used by :used ip->long sa hash key
  * */
