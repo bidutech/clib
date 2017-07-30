@@ -1,14 +1,10 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "stringtest.h"
 
-
-//using namespace std;
-
-#include "stdio.h"
-#include "time.h"
-#include "stdlib.h"
-#include<string.h>
 
 
 

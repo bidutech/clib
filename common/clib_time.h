@@ -33,6 +33,7 @@ lunardate clib_time_now_lunardate();//当前农历年月日
 
 char * clib_time_lunardate_to_callocstr(lunardate lunar_date);//获取农历字符串 “二零一七年二月初二”
 
+void clib_time_lunardateto_ch_str_r(lunardate lunar_date,char *buf);
 
 lunardate clib_time_lunardate(int solar_year,int solar_month,int solar_day);//公历年月日转农历
 

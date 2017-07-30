@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <clib_file.h>
 #include <sys/vfs.h>
+#include<unistd.h>
+
+#include <clib_file.h>
 
 int 
 clib_file_current_path(char * ppath,int pathlen)

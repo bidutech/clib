@@ -35,6 +35,8 @@ set(SOURCE_FILES
         common/clib_btype.h
         common/clib_des.c
         common/clib_des.h
+        common/clib_des1.c
+        common/clib_des1.h
 
         common/clib_system.h
         common/clib_system.c
