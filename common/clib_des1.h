@@ -17,6 +17,7 @@
 extern "C" {
 #endif
 
+int clib_des_sample();
 
 int clib_des_file_decode(const char *pfile1, const char *pfile2);//pfile1 input ÊäÈëÎÄ¼ş£¬ decode func
 
