@@ -195,6 +195,20 @@ int clib_http_get_ip_v2(void * ipinfo)
 
 }
 
+int clib_http_get_hardaddr(void * ipinfo)
+{
+    clib_ip_type *p_ip = (clib_ip_type *)ipinfo;
+    if(!p_ip ) 
+    {
+        return 0;
+    }
+
+    int ip_num = 0;
+
+    return ip_num;
+}
+
+
 int clib_http_get_ip_v1(void * ipinfo)
 {
     clib_ip_type *p_ip = (clib_ip_type *)ipinfo; 
