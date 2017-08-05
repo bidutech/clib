@@ -38,7 +38,7 @@ set(SOURCE_FILES
         common/clib_des.h
         common/clib_des1.c
         common/clib_des1.h
-
+        
         common/clib_system.h
         common/clib_system.c
         common/uuid/clib_uuid_wraper.h
@@ -51,6 +51,9 @@ set(SOURCE_FILES
         common/uuid/clib_uuid_wraper.c
         common/uuid/clib_uuid_wraper.h 
         
+        common/memtools/clib_mpool.c
+        common/memtools/clib_mpool.h
+
         test/stringtest.h
         test/stringtest.c
 
