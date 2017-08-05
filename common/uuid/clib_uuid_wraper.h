@@ -1,7 +1,11 @@
 
 #ifndef CLIB_UUID32_WRAPPER
 #define CLIB_UUID32_WRAPPER
-
+/***************
+ *
+ *reference: http://blog.csdn.net/ubuntu64fan/article/details/1787891
+ *
+ * ***************/
 #ifdef  __cplusplus
 extern "C" {
 #endif
