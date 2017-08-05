@@ -15,6 +15,7 @@ message("Build Type:" ${CMAKE_BUILD_TYPE} ${CMAKE_CXX_FLAGS})
 
 INCLUDE_DIRECTORIES(
 common
+common/uuid
 test
 )
 
@@ -40,6 +41,16 @@ set(SOURCE_FILES
 
         common/clib_system.h
         common/clib_system.c
+        common/uuid/clib_uuid_wraper.h
+        common/uuid/clib_uuid_wraper.c
+        common/uuid/clib_uuid_md5.h
+        common/uuid/clib_uuid_md5.c
+        common/uuid/clib_uuid_datatype.h
+        common/uuid/clib_uuid32.h
+        common/uuid/clib_uuid32.c
+        common/uuid/clib_uuid_wraper.c
+        common/uuid/clib_uuid_wraper.h 
+        
         test/stringtest.h
         test/stringtest.c
 

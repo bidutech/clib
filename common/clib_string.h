@@ -11,8 +11,15 @@ extern "C" {
 #include <stdio.h>
 #include "clib_btype.h"
 
+typedef long long __int64;
 
+__int64 clib_string_atoi64(  const char *nptr);
 
+int clib_string_atoi(const char *nptr);
+
+long  clib_string_atol(  const char *nptr );
+
+char* clib_string_itoa(int value, char* string, int radix);
 
 int string_up_to_lower(char *buf, int len);
 

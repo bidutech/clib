@@ -7,6 +7,160 @@
 #include <ctype.h>
 #include "clib_string.h"
 
+/*** 
+ * *int atoi(char *nptr) - Convert string to long 
+ * * 
+ * *Purpose: 
+ * * Converts ASCII string pointed to by nptr to binary. 
+ * * Overflow is not detected. Because of this, we can just use 
+ * * atol(). 
+ * * 
+ * *Entry: 
+ * * nptr = ptr to string to convert 
+ * * 
+ * *Exit: 
+ * * return int value of the string 
+ * * 
+ * *Exceptions: 
+ * * None - overflow is not detected. 
+ * * 
+ * *******************************************************************************/
+
+__int64 clib_string_atoi64(  const char *nptr)  
+{  
+    int c; /* current char */  
+    __int64 total; /* current total */  
+    int sign; /* if ''-'', then negative, otherwise positive */  
+
+    /* skip whitespace */  
+    while ( isspace((int)(unsigned char)*nptr) )  
+        ++nptr;  
+
+    c = (int)(unsigned char)*nptr++;  
+    sign = c; /* save sign indication */  
+    if (c == '-' || c == '+')  
+        c = (int)(unsigned char)*nptr++; /* skip sign */  
+
+    total = 0;  
+
+    while (isdigit(c)) {  
+        total = 10 * total + (c - '0'); /* accumulate digit */  
+        c = (int)(unsigned char)*nptr++; /* get next char */  
+    }  
+
+    if (sign == '-')  
+        return -total;  
+    else  
+        return total; /* return result, negated if necessary */  
+}  
+
+/*** 
+ * *int atoi(char *nptr) - Convert string to long 
+ * * 
+ * *Purpose: 
+ * * Converts ASCII string pointed to by nptr to binary. 
+ * * Overflow is not detected. Because of this, we can just use 
+ * * atol(). 
+ * * 
+ * *Entry: 
+ * * nptr = ptr to string to convert 
+ * * 
+ * *Exit: 
+ * * return int value of the string 
+ * * 
+ * *Exceptions: 
+ * * None - overflow is not detected. 
+ * * 
+ * *******************************************************************************/  
+  
+int clib_string_atoi(const char *nptr)  
+{  
+    return (int)clib_string_atol(nptr);  
+}  
+
+/*** 
+ * *long atol(char *nptr) - Convert string to long 
+ * * 
+ * *Purpose: 
+ * * Converts ASCII string pointed to by nptr to binary. 
+ * * Overflow is not detected. 
+ * * 
+ * *Entry: 
+ * * nptr = ptr to string to convert 
+ * * 
+ * *Exit: 
+ * * return long int value of the string 
+ * * 
+ * *Exceptions: 
+ * * None - overflow is not detected. 
+ * * 
+ * *******************************************************************************/  
+  
+long  clib_string_atol(  const char *nptr )  
+{  
+    int c; /* current char */  
+    long total; /* current total */  
+    int sign; /* if ''-'', then negative, otherwise positive */  
+
+    /* skip whitespace */  
+    while ( isspace((int)(unsigned char)*nptr) )  
+        ++nptr;  
+
+    c = (int)(unsigned char)*nptr++;  
+    sign = c; /* save sign indication */  
+    if (c == '-' || c == '+')  
+        c = (int)(unsigned char)*nptr++; /* skip sign */  
+
+    total = 0;  
+
+    while (isdigit(c)) {  
+        total = 10 * total + (c - '0'); /* accumulate digit */  
+        c = (int)(unsigned char)*nptr++; /* get next char */  
+    }  
+
+    if (sign == '-')  
+        return -total;  
+    else  
+        return total; /* return result, negated if necessary */  
+}  
+
+char* clib_string_itoa(int value, char* string, int radix)
+{  
+    char tmp[33];  
+    char* tp = tmp;  
+    int i;  
+    unsigned v;  
+    int sign;  
+    char* sp;  
+    if (radix > 36 || radix <= 1)  
+    {  
+
+        return 0;  
+    }  
+    sign = (radix == 10 && value < 0);  
+    if (sign)  
+        v = -value;  
+    else  
+        v = (unsigned)value;  
+    while (v || tp == tmp)  
+    {  
+        i = v % radix;  
+        v = v / radix;  
+        if (i < 10)  
+            *tp++ = i+'0';  
+        else  
+            *tp++ = i + 'a' - 10;  
+    }  
+    if (string == 0)  
+        string = (char*)malloc((tp-tmp)+sign+1);  
+    sp = string;  
+    if (sign)  
+        *sp++ = '-';  
+    while (tp > tmp)  
+        *sp++ = *--tp;  
+    *sp = 0;  
+    return string;  
+}  
 int
 string_up_to_lower(char *buf, int len)
 {
