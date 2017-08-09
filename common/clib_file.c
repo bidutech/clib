@@ -22,7 +22,7 @@ clib_file_current_path(char * ppath,int pathlen)
 		/*if(pathlen===错误处理===strlen(path))*/
 		lpath=calloc(1,strlen(path)+1);
 		strncpy(lpath,path,strlen(path));
-		*ppath = lpath;
+		//*ppath = lpath;
 		
 		strncpy(ppath,lpath,pathlen);
 		ppath[pathlen]='\0';

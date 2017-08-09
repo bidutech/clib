@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 int clib_check_live_process(char * live_process_name);//if return value >0 the process is alive
-
+int clib_is_bigend();//test system is big end or little end
 
 #ifdef __cplusplus
 }
