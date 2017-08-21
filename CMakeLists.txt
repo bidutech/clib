@@ -16,6 +16,8 @@ message("Build Type:" ${CMAKE_BUILD_TYPE} ${CMAKE_CXX_FLAGS})
 INCLUDE_DIRECTORIES(
 common
 common/uuid
+common/memtools
+common/socket
 test
 )
 
@@ -53,6 +55,10 @@ set(SOURCE_FILES
         
         common/memtools/clib_mpool.c
         common/memtools/clib_mpool.h
+        common/socket/clib_socket.h
+        common/socket/clib_socket.c
+        common/socket/clib_kqueue.h
+        common/socket/clib_kqueue.c
 
         test/stringtest.h
         test/stringtest.c
